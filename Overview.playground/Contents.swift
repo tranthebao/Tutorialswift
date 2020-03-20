@@ -51,3 +51,33 @@ if let name = optinalName{
     greeting = "Hello, \(name)"
 }
 print(greeting)
+
+let nickName: String? = nil
+let fullName:String = "Bao.Tran"
+let informalGreeting = "Hi! \(nickName ?? fullName)"
+print(informalGreeting)
+
+let vegetable = "red paper"
+switch vegetable {
+case "celery":
+    print("And some raisins and make ants on a log.")
+case "cucumber", "watercress":
+    print("That would make a good tea sanwitch.")
+case let x where x.hasSuffix("paper"):
+    print("Is it a spicy \(x)?")
+default:
+    print("Everything tastes good in shop")
+}
+
+let π = 3.14
+print(π)
+
+let minValue = UInt8.min
+let maxValue = UInt8.max
+print("Max \(maxValue)- Min \(minValue)")
+
+typealias typeTest = UInt16
+
+print(typeTest.max)
+
+let (statusCode, statusMessage) = http404Error
