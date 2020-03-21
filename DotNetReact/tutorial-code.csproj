@@ -7,6 +7,10 @@
 		<PackageId>tutorial-code</PackageId>
 	</PropertyGroup>
 	<ItemGroup>
+	  <None Remove=".gitignore" />
+	  <None Remove=".gitattributes" />
+	</ItemGroup>
+	<ItemGroup>
 		<None Include="app.config" />
 		<None Update="wwwroot\**\*;Views\**\*;Areas\**\Views">
 			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
@@ -18,13 +22,30 @@
 		<PackageReference Include="JavascriptEngineSwitcher.ChakraCore.native.osx-x64" Version="3.1.8" />
 		<PackageReference Include="JavascriptEngineSwitcher.ChakraCore.native.win-x64" Version="3.1.8" />
 		<PackageReference Include="JavascriptEngineSwitcher.Extensions.MsDependencyInjection" Version="3.1.0" />
+		<PackageReference Include="JavascriptEngineSwitcher.V8" Version="3.3.1" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.2">
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		  <PrivateAssets>all</PrivateAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.2" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.2">
+		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		  <PrivateAssets>all</PrivateAssets>
+		</PackageReference>
 		<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.4" />
 		<PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
+		<PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.19" />
+		<PackageReference Include="MySql.Data.EntityFrameworkCore.Design" Version="8.0.19" />
 		<PackageReference Include="React.AspNet" Version="5.2.2" />
 	</ItemGroup>
 	<ItemGroup>
 		<Content Update="Views\Home\Index.cshtml">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
+	</ItemGroup>
+	<ItemGroup>
+	  <Compile Remove="DemoContext\StaffContext.cs" />
+	  <Compile Remove="Models\Employee.cs" />
+	  <Compile Remove="Models\City.cs" />
 	</ItemGroup>
 </Project>
